@@ -171,12 +171,12 @@
   border-radius: 10px;
 }
   
-/* Fundos dinâmicos */
-  .fundo-1 { background-image: url(/images/fundo-1.jpg); }
-  .fundo-2 { background-image: url(/images/fundo-2.jpg); }
-  .fundo-3 { background-image: url(/images/fundo-3.jpg); }
-  .fundo-4 { background-image: url(/images/fundo-4.jpg); }
-  .fundo-5 { background-image: url(/images/fundo-5.jpg); }
-  .fundo-6 { background-image: url(/images/fundo-6.jpg); }
-  .fundo-7 { background-image: url(/images/fundo-7.jpg); }
+
+.fundo-1 { background-image: url(/images/fundo-1.jpg); }
+.fundo-2 { background-image: url(/images/fundo-2.jpg); }
+.fundo-3 { background-image: url(/images/fundo-3.jpg); }
+.fundo-4 { background-image: url(/images/fundo-4.jpg); }
+.fundo-5 { background-image: url(/images/fundo-5.jpg); }
+.fundo-6 { background-image: url(/images/fundo-6.jpg); }
+.fundo-7 { background-image: url(/images/fundo-7.jpg); }
   </style>
