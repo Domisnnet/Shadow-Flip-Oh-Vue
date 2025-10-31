@@ -5,7 +5,6 @@
         <img src="/images/seta.png" alt="seta voltar" />
       </button>
   
-      <!-- O v-if garante que o componente só seja renderizado quando houver um card -->
       <FlipCard 
         v-if="currentCard"
         :fundo="currentCard.fundo"
@@ -16,7 +15,7 @@
         :descricao="currentCard.descricao"
         :atk="currentCard.atk"
         :def="currentCard.def"
-        @click-event="handleFlip" <!-- O evento de clique agora chama handleFlip diretamente -->
+        @click-event="handleFlip" 
       </FlipCard>/>
   
       <button class="btn-seta btn-avancar" @click="nextCard">
