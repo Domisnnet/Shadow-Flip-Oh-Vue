@@ -16,7 +16,7 @@
         :atk="currentCard.atk"
         :def="currentCard.def"
         @click-event="handleFlip" 
-      </FlipCard>/>
+      />
   
       <button class="btn-seta btn-avancar" @click="nextCard">
         <img src="/images/seta.png" alt="seta avançar" />
