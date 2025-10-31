@@ -1,0 +1,55 @@
+
+html, body {
+    height: 100%; 
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Yugioh", serif; 
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
+                      url(../../../public/images/fundo-site.jpg); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column; 
+    min-height: 100vh;
+    align-items: center; 
+    justify-content: center;
+    box-sizing: border-box;                  
+}
+
+.cabecalho {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.cabecalho .titulo {
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    font-size: 42px;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: #c08057;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c08057;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #c08057;
+}
