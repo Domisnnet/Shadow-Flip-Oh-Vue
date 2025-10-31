@@ -83,11 +83,10 @@
   
   .back-face {
     background-image: url("/images/fundo-carta.jpg");
-    background-size: cover; 
+    background-size: contain; 
     background-repeat: no-repeat; 
     background-position: center; 
-    /* O verso precisa estar pré-rotacionado */
-    transform: rotateY(180deg);
+    transform: rotateY(180deg) scale(1.4);
   }
   
   .front-face {
@@ -99,17 +98,80 @@
     background-size: cover;
   }
 
-  .card-title { font-size: 13px; padding: 5px; text-transform: uppercase; background: radial-gradient(circle, #f3e2c8, #e4cfa5, #c4a57a); border: 1px solid #a67c52; border-radius: 8px; color: #000; margin: 0 0 5px 0; text-align: center; }
-  .card-level { display: flex; justify-content: flex-end; gap: 2px; margin-right: 10px; }
-  .estrela { font-size: 16px; }
-  .card-image { width: 100%; max-width: 260px; align-self: center; border: 4px solid #a67c52; border-radius: 8px; display: block; }
-  .informacoes { margin-top: 5px; border-radius: 8px; color: #000; background: radial-gradient(circle, #f3e2c8, #e4cfa5, #c4a57a); border: 2px solid #a67c52; text-align: left; line-height: 1.5; padding: 5px; display: flex; flex-direction: column; flex-grow: 1; }
-  .descricao { border-bottom: 1px solid #000; padding: 10px; max-height: 95px; overflow-y: auto; font-size: 13px; flex-grow: 1; }
-  .stats { display: flex; justify-content: flex-end; gap: 15px; padding: 5px 10px; font-size: 13px; font-weight: bold; }
-  .descricao::-webkit-scrollbar { width: 8px; }
-  .descricao::-webkit-scrollbar-thumb { background: #c08057; border-radius: 10px; }
+  .card-title {
+  font-size: 13px;
+  padding: 5px;
+  text-transform: uppercase;
+  background: radial-gradient(circle, #f3e2c8, #e4cfa5, #c4a57a);
+  border: 1px solid #a67c52;
+  border-radius: 8px;
+  color: #000;
+  margin: 0 0 5px 0;
+  text-align: center;
+}
+
+.card-level {
+  display: flex;
+  justify-content: flex-end;
+  gap: 2px;
+  margin-right: 10px;
+}
+
+.estrela {
+  font-size: 16px;
+}
+
+.card-image {
+  width: 100%;
+  max-width: 260px;
+  align-self: center;
+  border: 4px solid #a67c52;
+  border-radius: 8px;
+  display: block;
+}
+
+.informacoes {
+  margin-top: 5px;
+  border-radius: 8px;
+  color: #000;
+  background: radial-gradient(circle, #f3e2c8, #e4cfa5, #c4a57a);
+  border: 2px solid #a67c52;
+  text-align: left;
+  line-height: 1.5;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.descricao {
+  border-bottom: 1px solid #000;
+  padding: 10px;
+  max-height: 95px;
+  overflow-y: auto;
+  font-size: 13px;
+  flex-grow: 1;
+}
+
+.stats {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  padding: 5px 10px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.descricao::-webkit-scrollbar {
+  width: 8px;
+}
+
+.descricao::-webkit-scrollbar-thumb {
+  background: #c08057;
+  border-radius: 10px;
+}
   
-  /* Fundos dinâmicos */
+/* Fundos dinâmicos */
   .fundo-1 { background-image: url(/images/fundo-1.jpg); }
   .fundo-2 { background-image: url(/images/fundo-2.jpg); }
   .fundo-3 { background-image: url(/images/fundo-3.jpg); }
