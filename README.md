@@ -1,4 +1,4 @@
-![Shadow-Flip-Oh!](https://github.com/Domisnnet/Shadow-Flip-Oh-Vue/blob/main/shadow-flip-oh/public/images/shadow-flip-oh.png)
+![Shadow-Flip-Oh!](https://github.com/Domisnnet/Shadow-Flip-Oh-Vue/blob/main/public/images/shadow-flip-oh.png)
 
 ---
 
@@ -156,5 +156,5 @@ Explore, contribua e divirta-se criando sua própria versão do duelo de memóri
 ## Para conhecer meu Repositório:
 
 <a href="https://github.com/Domisnnet">
-    <img src="https://github.com/Domisnnet/Shadow-Flip-Oh-Vue/blob/main/shadow-flip-oh/public/images/DomisDev.png" width="150px" height="150px" alt="Acessar perfil GitHub">
+    <img src="https://github.com/Domisnnet/Shadow-Flip-Oh-Vue/blob/main/public/images/DomisDev.png" width="150px" height="150px" alt="Acessar perfil GitHub">
 </a>
