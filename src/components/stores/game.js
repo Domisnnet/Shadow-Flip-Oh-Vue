@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia';
-import { RAW_CARD_DATA } from './data/rawCardData.js';
+import { RAW_CARD_DATA } from '../data/rawCardData.js';
 
 export const useGameStore = defineStore('game', {
     state: () => ({

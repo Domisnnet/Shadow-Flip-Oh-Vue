@@ -3,7 +3,10 @@ import { createPinia } from 'pinia';
 import App from './App.vue';
 import router from './components/router'; 
 
-import './style.css'; 
+import './assets/styles/reset.css';
+import './assets/styles/fonte.css';
+import './assets/styles/estilo.css';
+import './assets/styles/responsivo.css';
 
 const app = createApp(App);
 const pinia = createPinia();
