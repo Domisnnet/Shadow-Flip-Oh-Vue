@@ -30,20 +30,16 @@ import { useGameStore } from '../stores/game.js';
 
 const gameStore = useGameStore();
 
-// Inicializa o jogo quando o componente é montado
 onMounted(() => {
   gameStore.initializeGame();
 });
 
-// Obtém a carta atual da store
 const currentCard = computed(() => gameStore.currentCard);
 
-// Manipulador para o evento de virar a carta
 function handleFlip() {
-  gameStore.flipCard(); // Não precisa mais de argumento
+  gameStore.flipCard();
 }
 
-// Funções para navegar entre as cartas
 function nextCard() {
   gameStore.nextCard();
 }
@@ -54,17 +50,17 @@ function previousCard() {
 </script>
 
 <style scoped>
+/* Layout padrão para desktop e tablet */
 .slider-navigator {
-  display: flex; 
-  justify-content: center; 
-  align-items: center; 
-  height: 100vh; 
-  gap: 100px; 
-  position: relative; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  padding: 40px 20px;
 }
 
+/* Botões de navegação */
 .btn-seta {
-  background-color: rgba(0, 240, 255, 0.2);
   width: 70px;
   height: 70px;
   display: flex;
@@ -73,6 +69,7 @@ function previousCard() {
   border-radius: 50%;
   border: none;
   cursor: pointer;
+  background-color: rgba(0, 240, 255, 0.2);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2), inset 0 0 0 3px rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
@@ -97,28 +94,36 @@ function previousCard() {
   transform: rotate(180deg);
 }
 
+/* Layout para mobile */
 @media (max-width: 768px) {
   .slider-navigator {
-    gap: 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
   }
 
   .btn-seta {
-    position: absolute;
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
+    position: static;
   }
 
   .btn-seta img {
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
+  }
+
+  .btn-voltar,
+  .btn-avancar {
+    margin: 0 10px;
   }
 
   .btn-voltar {
-    left: 10px;
+    order: 1;
   }
 
   .btn-avancar {
-    right: 10px;
+    order: 2;
   }
 }
 </style>
