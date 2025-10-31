@@ -15,7 +15,7 @@
             :is-matched="card.isMatched"
             :card-state="card.cardState"
             @click-event="gameStore.handleCardClick"
-        </FlipCard>
+        />
     </div>
 </template>
 
