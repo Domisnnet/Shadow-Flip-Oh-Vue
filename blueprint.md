@@ -45,6 +45,15 @@ O objetivo era alinhar a lógica da aplicação com a interface de usuário, tra
 
 A aplicação agora funciona como um carrossel de cartas coeso, onde o estado de virada de cada carta é salvo durante a navegação, proporcionando uma experiência de usuário mais intuitiva e alinhada com o comportamento esperado de uma galeria de cartas.
 
+## Gerenciamento de Múltiplos Deploys
+
+O projeto está configurado para ser publicado em dois ambientes de hospedagem distintos: **GitHub Pages** e **Firebase Hosting**. Cada ambiente exige uma configuração de build específica no arquivo `vite.config.ts`, controlada pela propriedade `base`.
+
+-   **GitHub Pages**: Como o site é servido a partir de um subdiretório (ex: `usuario.github.io/repositorio/`), a configuração `base` deve ser definida como o nome do repositório: `base: '/Shadow-Flip-Oh-Vue/'`.
+-   **Firebase Hosting**: Como o site é servido a partir da raiz do domínio (ex: `projeto.web.app`), a configuração `base` deve ser comentada ou removida para usar o valor padrão (`'/'`).
+
+**Importante**: Antes de gerar o build da aplicação (`npm run build`), é essencial verificar e ajustar a propriedade `base` no arquivo `vite.config.ts` de acordo com a plataforma de destino.
+
 ## Deploy no GitHub Pages (Executado)
 
 Para publicar a aplicação na web, foi implementado um fluxo de deploy contínuo para o GitHub Pages.
@@ -56,7 +65,7 @@ Para publicar a aplicação na web, foi implementado um fluxo de deploy contínu
     - Executa o build da aplicação (`npm run build`).
     - Navega para o diretório `dist`, inicializa um repositório Git local, e envia (`push`) o conteúdo para a branch `gh-pages` do repositório remoto.
 2.  **Configuração da Chave SSH**: Para permitir que o ambiente de desenvolvimento enviasse o código para o GitHub de forma segura e automatizada, uma chave SSH foi gerada e adicionada às configurações do repositório no GitHub.
-3.  **Ajuste da Configuração do Vite**: O arquivo `vite.config.ts` foi modificado para incluir a propriedade `base: '/Shadow-Flip-Oh-Vue/'`. Este passo foi crucial para garantir que todos os caminhos para os assets (JavaScript, CSS, imagens) fossem gerados corretamente, considerando que o site seria servido a partir de um subdiretório.
+3.  **Ajuste da Configuração do Vite**: O arquivo `vite.config.ts` foi modificado para incluir a propriedade `base: '/Shadow-Flip-Oh-Vue/'`. Este passo foi crucial para garantir que todos os caminhos para os assets (JavaScript, CSS, imagens) fossem gerados corretamente, considerando que o site seria servido a partir de um subdireitório.
 4.  **Configuração do GitHub Pages**: Nas configurações do repositório, o GitHub Pages foi configurado para usar a branch `gh-pages` como fonte e a pasta `/(root)` como o diretório de publicação.
 
 **Resultado Final:**
@@ -64,3 +73,19 @@ Para publicar a aplicação na web, foi implementado um fluxo de deploy contínu
 A aplicação foi publicada com sucesso e está disponível publicamente na web através do GitHub Pages.
 
 - **URL do Site**: [https://domisnnet.github.io/Shadow-Flip-Oh-Vue/](https://domisnnet.github.io/Shadow-Flip-Oh-Vue/)
+
+## Deploy no Firebase Hosting (Executado)
+
+Como alternativa ao GitHub Pages, a aplicação também foi publicada no Firebase Hosting, uma plataforma de hospedagem de alta performance do Google.
+
+**Passos Executados:**
+
+1.  **Ajuste da Configuração do Vite**: A propriedade `base` no arquivo `vite.config.ts` foi comentada. Isso garante que os caminhos para os assets sejam relativos à raiz do domínio, que é o padrão do Firebase Hosting.
+2.  **Build da Aplicação**: O comando `npm run build` foi executado para gerar uma nova versão da pasta `dist` com os caminhos corretos.
+3.  **Deploy no Firebase**: Utilizando a ferramenta de deploy, o conteúdo da pasta `dist` foi enviado para o Firebase Hosting.
+
+**Resultado Final:**
+
+A aplicação foi publicada com sucesso e está disponível publicamente na web através do Firebase Hosting.
+
+- **URL do Site**: [https://shadow-flip-oh-86570817-f8cc4.web.app/](https://shadow-flip-oh-86570817-f8cc4.web.app/)

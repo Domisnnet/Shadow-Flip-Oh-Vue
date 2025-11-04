@@ -95,7 +95,7 @@ O jogo ficará disponível em [http://localhost:5173](http://localhost:5173)
 
 O projeto está disponível para jogar online nos seguintes links:
 
-- 🔥 **Firebase Hosting:** []()
+- 🔥 **Firebase Hosting:** [https://shadow-flip-oh-86570817-f8cc4.web.app/](https://shadow-flip-oh-86570817-f8cc4.web.app/)
 - 🐙 **GitHub Pages:** [https://domisnnet.github.io/Shadow-Flip-Oh-Vue/](https://domisnnet.github.io/Shadow-Flip-Oh-Vue/)
 
 
@@ -126,6 +126,15 @@ git checkout -b minha-feature
 <summary>É possível jogar online ❓</summary>
 
 - Sim! Os links de implantação estão disponíveis na seção [Implantação](#6--implantação).
+
+</details>
+
+<details>
+<summary>Como atualizar as versões publicadas (deploy) ❓</summary>
+
+- O projeto está configurado para dois ambientes: **Firebase Hosting** e **GitHub Pages**. Antes de fazer o deploy, é crucial configurar o arquivo `vite.config.ts` corretamente:
+  - **Para o Firebase Hosting**: **Comente** a linha `base: '/Shadow-Flip-Oh-Vue/'`. Em seguida, rode `npm run build` e faça o deploy da pasta `dist`.
+  - **Para o GitHub Pages**: **Descomente** a linha `base: '/Shadow-Flip-Oh-Vue/'`. Em seguida, rode o script `./deploy.sh`.
 
 </details>
 
