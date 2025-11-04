@@ -96,13 +96,12 @@ O projeto está disponível para jogar online nos seguintes links:
 
 <p align="left">
   <a href="https://shadow-flip-oh-86570817-f8cc4.web.app/" target="_blank">
-    <img src="https://img.shields.io/badge/Firebase-ffca28?style=plastic&logo=firebase&logoColor=black" alt="Firebase Hosting" height="30">
+    <img src="https://img.shields.io/badge/Firebase-ffca28?style=plastic&logo=firebase&logoColor=black" alt="Firebase Hosting" height="80">
   </a>
   <a href="https://domisnnet.github.io/Shadow-Flip-Oh-Vue/" target="_blank">
-    <img src="https://img.shields.io/badge/GitHub-181717?style=plastic&logo=github&logoColor=white" alt="GitHub Pages" height="30">
+    <img src="https://img.shields.io/badge/GitHub-181717?style=plastic&logo=github&logoColor=white" alt="GitHub Pages" height="80">
   </a>
 </p>
-
 
 ---
 
