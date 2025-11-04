@@ -96,10 +96,10 @@ O projeto está disponível para jogar online nos seguintes links:
 
 <p align="left">
   <a href="https://shadow-flip-oh-86570817-f8cc4.web.app/" target="_blank">
-    <img src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='200' height='60'%3e%3crect width='200' height='60' fill='%23ffca28' rx='8' /%3e%3ctext x='60' y='38' font-family='Arial, sans-serif' font-size='24' fill='black'%3eFirebase%3c/text%3e%3cimage href='https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg' x='15' y='15' height='30' width='30'/%3e%3c/svg%3e" alt="Deploy to Firebase Hosting">
+    <img src="./public/images/firebase_badge.svg" alt="Deploy to Firebase Hosting" width="200">
   </a>
   <a href="https://domisnnet.github.io/Shadow-Flip-Oh-Vue/" target="_blank">
-    <img src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='200' height='60'%3e%3crect width='200' height='60' fill='%23181717' rx='8' /%3e%3ctext x='60' y='38' font-family='Arial, sans-serif' font-size='24' fill='white'%3eGitHub%3c/text%3e%3cimage href='https://www.vectorlogo.zone/logos/github/github-icon.svg' x='15' y='15' height='30' width='30'/%3e%3c/svg%3e" alt="Deploy to GitHub Pages">
+    <img src="./public/images/github_badge.svg" alt="Deploy to GitHub Pages" width="200">
   </a>
 </p>
 
