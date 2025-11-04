@@ -96,10 +96,10 @@ O projeto está disponível para jogar online nos seguintes links:
 
 <p align="left">
   <a href="https://shadow-flip-oh-86570817-f8cc4.web.app/" target="_blank">
-    <img src="https://img.shields.io/badge/Firebase-ffca28?style=plastic&logo=firebase&logoColor=black" alt="Firebase Hosting" height="80">
+    <img src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='200' height='60'%3e%3crect width='200' height='60' fill='%23ffca28' rx='8' /%3e%3ctext x='60' y='38' font-family='Arial, sans-serif' font-size='24' fill='black'%3eFirebase%3c/text%3e%3cimage href='https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg' x='15' y='15' height='30' width='30'/%3e%3c/svg%3e" alt="Deploy to Firebase Hosting">
   </a>
   <a href="https://domisnnet.github.io/Shadow-Flip-Oh-Vue/" target="_blank">
-    <img src="https://img.shields.io/badge/GitHub-181717?style=plastic&logo=github&logoColor=white" alt="GitHub Pages" height="80">
+    <img src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='200' height='60'%3e%3crect width='200' height='60' fill='%23181717' rx='8' /%3e%3ctext x='60' y='38' font-family='Arial, sans-serif' font-size='24' fill='white'%3eGitHub%3c/text%3e%3cimage href='https://www.vectorlogo.zone/logos/github/github-icon.svg' x='15' y='15' height='30' width='30'/%3e%3c/svg%3e" alt="Deploy to GitHub Pages">
   </a>
 </p>
 
