@@ -44,3 +44,23 @@ O objetivo era alinhar a lógica da aplicação com a interface de usuário, tra
 **Resultado:**
 
 A aplicação agora funciona como um carrossel de cartas coeso, onde o estado de virada de cada carta é salvo durante a navegação, proporcionando uma experiência de usuário mais intuitiva e alinhada com o comportamento esperado de uma galeria de cartas.
+
+## Deploy no GitHub Pages (Executado)
+
+Para publicar a aplicação na web, foi implementado um fluxo de deploy contínuo para o GitHub Pages.
+
+**Passos Executados:**
+
+1.  **Criação do Script de Deploy (`deploy.sh`)**: Foi criado um script shell para automatizar o processo. O script executa as seguintes tarefas:
+    - Limpa o diretório de build antigo (`dist`).
+    - Executa o build da aplicação (`npm run build`).
+    - Navega para o diretório `dist`, inicializa um repositório Git local, e envia (`push`) o conteúdo para a branch `gh-pages` do repositório remoto.
+2.  **Configuração da Chave SSH**: Para permitir que o ambiente de desenvolvimento enviasse o código para o GitHub de forma segura e automatizada, uma chave SSH foi gerada e adicionada às configurações do repositório no GitHub.
+3.  **Ajuste da Configuração do Vite**: O arquivo `vite.config.ts` foi modificado para incluir a propriedade `base: '/Shadow-Flip-Oh-Vue/'`. Este passo foi crucial para garantir que todos os caminhos para os assets (JavaScript, CSS, imagens) fossem gerados corretamente, considerando que o site seria servido a partir de um subdiretório.
+4.  **Configuração do GitHub Pages**: Nas configurações do repositório, o GitHub Pages foi configurado para usar a branch `gh-pages` como fonte e a pasta `/(root)` como o diretório de publicação.
+
+**Resultado Final:**
+
+A aplicação foi publicada com sucesso e está disponível publicamente na web através do GitHub Pages.
+
+- **URL do Site**: [https://domisnnet.github.io/Shadow-Flip-Oh-Vue/](https://domisnnet.github.io/Shadow-Flip-Oh-Vue/)
