@@ -33,10 +33,10 @@ Além de entreter, este projeto demonstra como **Vue.js** pode ser usado para cr
 ## 2. ⚙️ **Tecnologias Utilizadas**
 
 <p align="left">
-  <img src="https://img.shields.io/badge/Vue.js-42b883?style=plastic&logo=vue.js&logoColor=white" alt="Vue Badge" height="30">
-  <img src="https://img.shields.io/badge/Vite-646cff?style=plastic&logo=vite&logoColor=white" alt="Vite Badge" height="30">
-  <img src="https://img.shields.io/badge/Pinia-fada7a?style=plastic&logo=vue.js&logoColor=black" alt="Pinia Badge" height="30">
-  <img src="https://img.shields.io/badge/Vue_Router-35495e?style=plastic&logo=vue.js&logoColor=white" alt="Vue Router Badge" height="30">
+  <img src="https://img.shields.io/badge/Vue.js-42b883?style=plastic&logo=vue.js&logoColor=white" alt="Vue Badge" height="50">
+  <img src="https://img.shields.io/badge/Vite-646cff?style=plastic&logo=vite&logoColor=white" alt="Vite Badge" height="50">
+  <img src="https://img.shields.io/badge/Pinia-fada7a?style=plastic&logo=vue.js&logoColor=black" alt="Pinia Badge" height="50">
+  <img src="https://img.shields.io/badge/Vue_Router-35495e?style=plastic&logo=vue.js&logoColor=white" alt="Vue Router Badge" height="50">
 </p>
 
 **Stack Principal:**
