@@ -33,10 +33,10 @@ Além de entreter, este projeto demonstra como **Vue.js** pode ser usado para cr
 ## 2. ⚙️ **Tecnologias Utilizadas**
 
 <p align="left">
-  <img src="https://img.shields.io/badge/Vue.js-42b883?style=plastic&logo=vue.js&logoColor=white" alt="Vue Badge">
-  <img src="https://img.shields.io/badge/Vite-646cff?style=plastic&logo=vite&logoColor=white" alt="Vite Badge">
-  <img src="https://img.shields.io/badge/Pinia-fada7a?style=plastic&logo=vue.js&logoColor=black" alt="Pinia Badge">
-  <img src="https://img.shields.io/badge/Vue_Router-35495e?style=plastic&logo=vue.js&logoColor=white" alt="Vue Router Badge">
+  <img src="https://img.shields.io/badge/Vue.js-42b883?style=plastic&logo=vue.js&logoColor=white" alt="Vue Badge" height="30">
+  <img src="https://img.shields.io/badge/Vite-646cff?style=plastic&logo=vite&logoColor=white" alt="Vite Badge" height="30">
+  <img src="https://img.shields.io/badge/Pinia-fada7a?style=plastic&logo=vue.js&logoColor=black" alt="Pinia Badge" height="30">
+  <img src="https://img.shields.io/badge/Vue_Router-35495e?style=plastic&logo=vue.js&logoColor=white" alt="Vue Router Badge" height="30">
 </p>
 
 **Stack Principal:**
@@ -97,10 +97,10 @@ O projeto está disponível para jogar online nos seguintes links:
 
 <p align="left">
   <a href="https://shadow-flip-oh-86570817-f8cc4.web.app/" target="_blank">
-    <img src="https://img.shields.io/badge/Firebase-ffca28?style=plastic&logo=firebase&logoColor=black" alt="Firebase Hosting">
+    <img src="https://img.shields.io/badge/Firebase-ffca28?style=plastic&logo=firebase&logoColor=black" alt="Firebase Hosting" height="30">
   </a>
   <a href="https://domisnnet.github.io/Shadow-Flip-Oh-Vue/" target="_blank">
-    <img src="https://img.shields.io/badge/GitHub-181717?style=plastic&logo=github&logoColor=white" alt="GitHub Pages">
+    <img src="https://img.shields.io/badge/GitHub-181717?style=plastic&logo=github&logoColor=white" alt="GitHub Pages" height="30">
   </a>
 </p>
 
