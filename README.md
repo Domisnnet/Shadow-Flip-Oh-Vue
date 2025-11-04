@@ -32,12 +32,12 @@ Além de entreter, este projeto demonstra como **Vue.js** pode ser usado para cr
 
 ## 2. ⚙️ **Tecnologias Utilizadas**
 
-<p align="left">
+<div align="center">
   <img src="https://img.shields.io/badge/Vue.js-42b883?style=flat&logo=vue.js&logoColor=white" alt="Vue Badge" widht="100">
   <img src="https://img.shields.io/badge/Vite-646cff?style=flat&logo=vite&logoColor=white" alt="Vite Badge" widht="100">
   <img src="https://img.shields.io/badge/Pinia-fada7a?style=flat&logo=vue.js&logoColor=black" alt="Pinia Badge" widht="100">
   <img src="https://img.shields.io/badge/Vue_Router-35495e?style=flat&logo=vue.js&logoColor=white" alt="Vue Router Badge" widht="100">
-</p>
+</div>
 
 **Stack Principal:**
 - ⚡ **Vue.js** — Framework progressivo para construção de interfaces interativas.  
