@@ -53,7 +53,8 @@ function handleClick() {
 
 <style scoped>
 .card-container {
-  width: 300px;
+  width: 100%;
+  max-width: 300px;
   height: 500px;
   perspective: 1000px; 
   cursor: pointer;
@@ -188,28 +189,13 @@ function handleClick() {
 /* 📱 Media Queries para responsividade */
 @media (max-width: 768px) {
   .card-container {
-    width: 100%;
-    height: auto;
+    max-width: 100%;
+    height: 500px;
   }
 
   .card-image {
     max-width: 100%;
     height: auto;
-  }
-
-  .informacoes {
-    max-height: 180px;
-  }
-}
-
-@media (max-width: 480px) {
-  .card-container {
-    width: 100%;
-    height: auto;
-  }
-
-  .card-title {
-    font-size: 12px;
   }
 
   .descricao {
@@ -218,6 +204,20 @@ function handleClick() {
 
   .stats {
     font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-title {
+    font-size: 12px;
+  }
+
+  .descricao {
+    font-size: 11px;
+  }
+
+  .stats {
+    font-size: 11px;
   }
 }
 </style>
