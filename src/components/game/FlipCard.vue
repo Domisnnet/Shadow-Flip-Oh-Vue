@@ -55,7 +55,7 @@ function handleClick() {
 .card-container {
   width: 100%;
   max-width: 300px;
-  aspect-ratio: 3 / 5;
+  height: 500px;
   perspective: 1000px; 
   cursor: pointer;
 }
@@ -126,7 +126,7 @@ function handleClick() {
 .card-image {
   width: 100%;
   height: auto;
-  max-height: 40%;
+  max-height: 200px;
   object-fit: contain;
   border: 4px solid #a67c52;
   border-radius: 8px;
@@ -189,7 +189,11 @@ function handleClick() {
 @media (max-width: 768px) {
   .card-container {
     max-width: 100%;
-    aspect-ratio: 3 / 5;
+    height: 500px;
+  }
+
+  .card-image {
+    max-height: 180px;
   }
 
   .descricao {

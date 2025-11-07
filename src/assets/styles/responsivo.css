@@ -1,59 +1,74 @@
-@media(max-width: 768px) {
+/* === Estilos gerais para telas menores === */
+@media (max-width: 768px) {
     body {
-        background-position: center;
-        padding: 0 15px;
+      background-position: center;
+      padding: 0 15px;
     }
-
+  
     .slider {
-        gap: 10px;
+      gap: 10px;
     }
-}
-
-@media(max-width: 496px) {
+  
+    /* Evita conflito com FlipCard */
     .lista-personagens {
-        width: 250px;
+      max-width: 100%;
+      margin: 0 auto;
     }
-
+  
     .imagem-carta {
-        width: 100%;
-    }
-
-    .slider {
-        position: relative;
-    }
-
-    .btn-seta {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 45px;
-        height: 45px;
-    }
-
-    #btn-avancar {
-        right: 10px; /* Posiciona dentro da borda direita */
-    }
-
-    #btn-voltar {
-        left: 10px; /* Posiciona dentro da borda esquerda */
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
     }
 }
-
-@media(max-width: 375px) {
-    body {
-        justify-content: start;
-        padding-top: 10px;
-        gap: 10px;
-    }
-
-    .cabecalho {
-        font-size: 12px;
-    }
-}
-
-
-@media(max-width: 320px) {
+  
+/* === Estilos para celulares médios === */
+@media (max-width: 496px) {
     .lista-personagens {
-        width: 200px;
+      width: 250px;
+    }
+  
+    .slider {
+      position: relative;
+    }
+  
+    .btn-seta {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 45px;
+      height: 45px;
+    }
+  
+    #btn-avancar {
+      right: 10px;
+    }
+  
+    #btn-voltar {
+      left: 10px;
+    }
+}
+  
+/* === Estilos para celulares pequenos === */
+@media (max-width: 375px) {
+    body {
+      justify-content: flex-start;
+      padding-top: 10px;
+      gap: 10px;
+    }
+  
+    .cabecalho {
+      font-size: 12px;
+    }
+  
+    .lista-personagens {
+      width: 220px;
+    }
+}
+  
+/* === Estilos para celulares muito pequenos === */
+@media (max-width: 320px) {
+    .lista-personagens {
+      width: 200px;
     }
 }
