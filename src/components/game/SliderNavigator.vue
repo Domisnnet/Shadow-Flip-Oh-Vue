@@ -123,7 +123,6 @@ function previousCard() {
     align-items: center;
     width: 100%;
     max-width: 300px; 
-    /* Coloca o grupo de botões abaixo da carta */
     order: 2; 
   }
 
@@ -135,7 +134,6 @@ function previousCard() {
   .slider-navigator .btn-seta { 
     display: flex !important;
     position: static !important;
-    
     width: 60px;
     height: 60px;
     margin: 0; 
