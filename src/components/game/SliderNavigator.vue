@@ -29,8 +29,8 @@
   
 <script setup>
   import { computed, onMounted } from 'vue'; 
-  import FlipCard from '../game/FlipCard.vue'; // Certifique-se de que o caminho está correto
-  import { useGameStore } from '../stores/game.js'; // Certifique-se de que o caminho está correto
+  import FlipCard from '../game/FlipCard.vue'; 
+  import { useGameStore } from '../stores/game.js';
   
   const gameStore = useGameStore();
   
@@ -110,36 +110,37 @@
   /* Layout para mobile (max-width: 768px) */
   @media (max-width: 768px) {
   .slider-navigator {
-    flex-direction: column; /* Continua empilhando o grupo de botões E a Carta */
+    flex-direction: column; /* OK: Empilha Carta e Grupo de Botões */
     align-items: center;
     gap: 20px;
     padding: 20px 10px;
   }
   
-  /* ESTA É A CORREÇÃO: Força os botões ficarem lado a lado */
+  /* CORREÇÃO AQUI: Força a exibição Flexbox e Alinhamento Horizontal */
   .botoes-mobile {
-    display: flex; /* CRUCIAL: Ativa o Flexbox para os filhos */
-    flex-direction: row; /* CRUCIAL: Alinha os itens em linha (lado a lado) */
-    justify-content: center; /* Centraliza os dois botões no espaço */
+    /* SOBRESCRITA ESSENCIAL: Garante que o Flexbox esteja ativo no mobile */
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-around; /* Distribui os botões ao longo da largura */
     align-items: center;
     width: 100%;
-    max-width: 300px; /* Limita a largura dos botões, alinhando com a carta */
+    max-width: 300px; /* Alinha com a largura da carta */
     order: 2; /* Coloca o grupo de botões abaixo da carta */
-    gap: 50px; /* Adiciona um espaço fixo entre os dois botões */
+    /* Removido 'gap: 50px;' e substituído por 'justify-content: space-around;' */
   }
 
   /* Ajusta o FlipCard para ser o primeiro item (o card) */
   .slider-navigator > .FlipCard { 
-    order: 1; 
+      order: 1; 
   }
 
   /* Redimensiona e ajusta os botões no mobile */
   .btn-seta {
-    /* Reduz o tamanho e garante que não haja margens conflitantes */
     width: 60px;
     height: 60px;
     position: static;
-    margin: 0; /* Remove qualquer margem externa desnecessária */
+    /* Essencial: zera margens que possam estar empurrando */
+    margin: 0; 
   }
 
   .btn-seta img {
