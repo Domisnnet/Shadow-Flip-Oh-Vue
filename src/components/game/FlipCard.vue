@@ -141,6 +141,7 @@ function handleClick() {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  min-height: 0;
 }
 
 .descricao {
