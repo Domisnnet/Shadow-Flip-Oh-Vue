@@ -4,18 +4,20 @@
       <img src="/images/seta.png" alt="seta voltar" />
     </button>
 
-    <FlipCard 
-      v-if="currentCard"
-      :fundo="currentCard.fundo"
-      :card-state="currentCard.cardState"
-      :content-url="currentCard.contentUrl" 
-      :alt="currentCard.alt"
-      :nivel="currentCard.nivel"
-      :descricao="currentCard.descricao"
-      :atk="currentCard.atk"
-      :def="currentCard.def"
-      @click-event="handleFlip" 
-    />
+    <div class="card-wrapper">
+      <FlipCard 
+        v-if="currentCard"
+        :fundo="currentCard.fundo"
+        :card-state="currentCard.cardState"
+        :content-url="currentCard.contentUrl" 
+        :alt="currentCard.alt"
+        :nivel="currentCard.nivel"
+        :descricao="currentCard.descricao"
+        :atk="currentCard.atk"
+        :def="currentCard.def"
+        @click-event="handleFlip" 
+      />
+    </div>
 
     <button class="btn-seta btn-avancar" @click="nextCard">
       <img src="/images/seta.png" alt="seta avançar" />
@@ -50,13 +52,25 @@ function previousCard() {
 </script>
 
 <style scoped>
-/* Layout padrão para desktop e tablet */
 .slider-navigator {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 100px;
+  flex-wrap: wrap;
+  gap: 20px;
   padding: 40px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  isolation: isolate;
+}
+
+/* Container do card */
+.card-wrapper {
+  flex: 1 1 320px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 320px;
 }
 
 /* Botões de navegação */
@@ -99,7 +113,12 @@ function previousCard() {
   .slider-navigator {
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    padding: 20px;
+  }
+
+  .card-wrapper {
+    width: 100%;
+    max-width: 320px;
   }
 
   .btn-seta {
