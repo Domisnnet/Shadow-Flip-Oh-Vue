@@ -54,6 +54,7 @@ function previousCard() {
 </script>
 
 <style scoped>
+/* Layout padrão para desktop e tablet (Horizontal: Botões | Carta) */
 .slider-navigator {
   display: flex;
   justify-content: center;
@@ -62,10 +63,12 @@ function previousCard() {
   padding: 40px 20px;
 }
 
+/* No desktop, este contêiner não deve afetar o layout principal. */
 .botoes-mobile {
   display: contents; 
 }
 
+/* Botões de navegação (Estilos comuns) */
 .btn-seta {
   width: 70px;
   height: 70px;
@@ -80,7 +83,7 @@ function previousCard() {
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   transition: all 0.3s ease-in-out;
-  position: relative;
+  position: relative; /* Mantido 'relative' para o desktop/tablet */
   z-index: 100;
 }
 
@@ -100,14 +103,18 @@ function previousCard() {
   transform: rotate(180deg);
 }
 
+/* ================================================= */
+/* Layout para mobile (max-width: 768px) */
+/* ================================================= */
 @media (max-width: 768px) {
   .slider-navigator {
-    flex-direction: column;
+    flex-direction: column; /* Empilha a carta e o grupo de botões */
     align-items: center;
     gap: 20px;
     padding: 20px 10px;
   }
   
+  /* Contêiner dos botões: FORÇA O LAYOUT LADO A LADO */
   .botoes-mobile {
     display: flex; 
     flex-direction: row; 
@@ -115,18 +122,26 @@ function previousCard() {
     align-items: center;
     width: 100%;
     max-width: 300px; 
-    order: 2; 
+    order: 2; /* Coloca o grupo de botões abaixo da carta */
   }
 
+  /* Carta: Garante que fique no topo */
   .slider-navigator > .FlipCard { 
       order: 1; 
   }
 
+  /* REVERSÃO DA REGRA GLOBAL (CORREÇÃO DE CONFLITO) */
   .btn-seta {
     width: 60px;
     height: 60px;
-    position: static;
-    margin: 0;
+    /* ESSENCIAL: Anula o 'position: absolute;' do arquivo responsivo.css */
+    position: static; 
+    margin: 0; 
+  }
+  
+  /* Caso o .btn-seta não seja específico o suficiente, use este seletor */
+  .slider-navigator .btn-seta {
+      position: static; 
   }
 
   .btn-seta img {
