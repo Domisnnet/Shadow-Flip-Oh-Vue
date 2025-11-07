@@ -113,8 +113,8 @@ function previousCard() {
   
   .botoes-mobile {
     display: flex !important; 
-    flex-direction: row; 
-    justify-content: space-between; 
+    flex-direction: row !important; 
+    justify-content: space-around; 
     align-items: center;
     width: 100%;
     max-width: 300px; 
