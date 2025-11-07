@@ -1,20 +1,28 @@
 <template>
-  <div class="flipcard" @click="handleClick">
-    <div class="flipcard__inner" :class="{ 'flipped': cardState === 'flipped' }">
-      <div class="flipcard__face flipcard__back"></div>
-
-      <div class="flipcard__face flipcard__front" :class="fundo">
-        <h2 class="flipcard__title">{{ alt }}</h2>
-
-        <div class="flipcard__level">
-          <span v-for="star in nivel" :key="star">⭐</span>
+  <div 
+    class="card-container" 
+    @click="handleClick"
+  >
+    <div 
+      class="card-inner" 
+      :class="{ 'flipped': cardState === 'flipped' }"
+    >
+      <!-- Verso do Card -->
+      <div class="card-face back-face"></div>
+      
+      <!-- Frente do Card -->
+      <div class="card-face front-face" :class="fundo">
+        <h2 class="card-title">{{ alt }}</h2>
+        
+        <div class="card-level">
+          <span v-for="star in nivel" :key="star" class="estrela">⭐</span>
         </div>
 
-        <img :src="contentUrl" :alt="alt" class="flipcard__image" />
-
-        <div class="flipcard__info">
-          <div class="flipcard__description">{{ descricao }}</div>
-          <div class="flipcard__stats">
+        <img :src="contentUrl" :alt="alt" class="card-image"/>
+        
+        <div class="informacoes">
+          <div class="descricao">{{ descricao }}</div>
+          <div class="stats">
             <span>ATK/ {{ atk }}</span>
             <span>DEF/ {{ def }}</span>
           </div>
@@ -26,9 +34,9 @@
 
 <script setup>
 defineProps({
-  fundo: String,
-  cardState: String,
-  contentUrl: String,
+  fundo: String,         
+  cardState: String,     
+  contentUrl: String,   
   alt: String,
   nivel: Number,
   descricao: String,
@@ -44,15 +52,15 @@ function handleClick() {
 </script>
 
 <style scoped>
-.flipcard {
+.card-container {
   width: 100%;
-  max-width: 320px;
-  aspect-ratio: 3 / 5;
-  perspective: 1000px;
+  max-width: 300px;
+  height: 500px;
+  perspective: 1000px; 
   cursor: pointer;
 }
 
-.flipcard__inner {
+.card-inner {
   position: relative;
   width: 100%;
   height: 100%;
@@ -60,40 +68,39 @@ function handleClick() {
   transform-style: preserve-3d;
 }
 
-.flipcard__inner.flipped {
+.card-inner.flipped {
   transform: rotateY(180deg);
 }
 
-.flipcard__face {
+.card-face {
   position: absolute;
   width: 100%;
   height: 100%;
-  backface-visibility: hidden;
+  backface-visibility: hidden; 
   border-radius: 10px;
   overflow: hidden;
 }
 
-.flipcard__back {
+.back-face {
   background-image: url("/images/fundo-carta.jpg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-size: contain; 
+  background-repeat: no-repeat; 
+  background-position: center; 
   transform: rotateY(180deg) scale(1.4);
 }
 
-.flipcard__front {
+.front-face {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   padding: 12px;
-  gap: 10px;
+  gap: 5px;
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
   overflow: hidden;
 }
 
-.flipcard__title {
+.card-title {
   font-size: 13px;
   padding: 5px;
   text-transform: uppercase;
@@ -101,28 +108,32 @@ function handleClick() {
   border: 1px solid #a67c52;
   border-radius: 8px;
   color: #000;
-  margin-bottom: 5px;
+  margin: 0 0 5px 0;
   text-align: center;
 }
 
-.flipcard__level {
+.card-level {
   display: flex;
   justify-content: flex-end;
   gap: 2px;
   margin-right: 10px;
 }
 
-.flipcard__image {
+.estrela {
+  font-size: 16px;
+}
+
+.card-image {
   width: 100%;
   height: auto;
-  max-height: 35%;
+  max-height: 200px;
   object-fit: contain;
   border: 4px solid #a67c52;
   border-radius: 8px;
   display: block;
 }
 
-.flipcard__info {
+.informacoes {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -137,18 +148,17 @@ function handleClick() {
   padding: 5px;
 }
 
-.flipcard__description {
+.descricao {
   flex-grow: 1;
   overflow-y: auto;
   padding: 10px;
   font-size: 13px;
-  line-height: 1.4;
   border-bottom: 1px solid #000;
   white-space: normal;
   overflow-wrap: break-word;
 }
 
-.flipcard__stats {
+.stats {
   display: flex;
   justify-content: flex-end;
   gap: 15px;
@@ -157,16 +167,16 @@ function handleClick() {
   font-weight: bold;
 }
 
-.flipcard__description::-webkit-scrollbar {
+.descricao::-webkit-scrollbar {
   width: 8px;
 }
 
-.flipcard__description::-webkit-scrollbar-thumb {
+.descricao::-webkit-scrollbar-thumb {
   background: #c08057;
   border-radius: 10px;
 }
 
-/* Fundos dinâmicos */
+/* Fundos */
 .fundo-1 { background-image: url(/images/fundo-1.jpg); }
 .fundo-2 { background-image: url(/images/fundo-2.jpg); }
 .fundo-3 { background-image: url(/images/fundo-3.jpg); }
@@ -175,35 +185,36 @@ function handleClick() {
 .fundo-6 { background-image: url(/images/fundo-6.jpg); }
 .fundo-7 { background-image: url(/images/fundo-7.jpg); }
 
-/* Responsividade */
+/* 📱 Media Queries para responsividade */
 @media (max-width: 768px) {
-  .flipcard {
+  .card-container {
     max-width: 100%;
+    height: 500px;
   }
 
-  .flipcard__image {
+  .card-image {
     max-height: 180px;
   }
 
-  .flipcard__description {
+  .descricao {
     font-size: 12px;
   }
 
-  .flipcard__stats {
+  .stats {
     font-size: 12px;
   }
 }
 
 @media (max-width: 480px) {
-  .flipcard__title {
+  .card-title {
     font-size: 12px;
   }
 
-  .flipcard__description {
+  .descricao {
     font-size: 11px;
   }
 
-  .flipcard__stats {
+  .stats {
     font-size: 11px;
   }
 }
