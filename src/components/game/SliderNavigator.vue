@@ -1,9 +1,15 @@
 <template>
   <div class="slider-navigator"> 
     
-    <button class="btn-seta btn-voltar" @click="previousCard">
-      <img src="/images/seta.png" alt="seta voltar" />
-    </button>
+    <div class="botoes-mobile"> 
+      <button class="btn-seta btn-voltar" @click="previousCard">
+        <img src="/images/seta.png" alt="seta voltar" />
+      </button>
+
+      <button class="btn-seta btn-avancar" @click="nextCard">
+        <img src="/images/seta.png" alt="seta avançar" />
+      </button>
+    </div>
 
     <FlipCard 
       v-if="currentCard"
@@ -17,44 +23,37 @@
       :def="currentCard.def"
       @click-event="handleFlip" 
     />
-
-    <button class="btn-seta btn-avancar" @click="nextCard">
-      <img src="/images/seta.png" alt="seta avançar" />
-    </button>
     
   </div>
 </template>
-  
+
 <script setup>
-  import { computed, onMounted } from 'vue'; 
-  import FlipCard from '../game/FlipCard.vue'; 
-  import { useGameStore } from '../stores/game.js';
-  
-  const gameStore = useGameStore();
-  
-  onMounted(() => {
-    // Inicializa o jogo, geralmente carregando a lista completa de cartas
-    gameStore.initializeGame();
-  });
-  
-  // A computed property reage a mudanças no estado do store
-  const currentCard = computed(() => gameStore.currentCard);
-  
-  function handleFlip() {
-    gameStore.flipCard();
-  }
-  
-  function nextCard() {
-    gameStore.nextCard();
-  }
-  
-  function previousCard() {
-    gameStore.previousCard();
-  }
+import { computed, onMounted } from 'vue'; 
+import FlipCard from '../game/FlipCard.vue';
+import { useGameStore } from '../stores/game.js';
+
+const gameStore = useGameStore();
+
+onMounted(() => {
+  gameStore.initializeGame();
+});
+
+const currentCard = computed(() => gameStore.currentCard);
+
+function handleFlip() {
+  gameStore.flipCard();
+}
+
+function nextCard() {
+  gameStore.nextCard();
+}
+
+function previousCard() {
+  gameStore.previousCard();
+}
 </script>
-  
+
 <style scoped>
-/* Layout padrão para desktop e tablet (Horizontal: Botão | Carta | Botão) */
 .slider-navigator {
   display: flex;
   justify-content: center;
@@ -63,7 +62,10 @@
   padding: 40px 20px;
 }
 
-/* Botões de navegação (Estilos comuns) */
+.botoes-mobile {
+  display: contents; 
+}
+
 .btn-seta {
   width: 70px;
   height: 70px;
@@ -98,43 +100,38 @@
   transform: rotate(180deg);
 }
 
-/* Layout para mobile (max-width: 768px) */
 @media (max-width: 768px) {
   .slider-navigator {
-    /* MUDANÇA ESSENCIAL: Permite que os itens envolvam (wrap) */
-    flex-wrap: wrap; 
-    
-    /* MUDANÇA ESSENCIAL: Permite que os itens fiquem alinhados */
-    justify-content: space-around; 
-    
-    /* Ajusta o alinhamento central */
+    flex-direction: column;
     align-items: center;
-    
-    /* Força a largura para 100% para que os botões envolvam a carta */
-    width: 100%; 
+    gap: 20px;
     padding: 20px 10px;
-    gap: 0; /* Remove o gap de 100px do desktop */
   }
   
-  /* Faz o contêiner da carta ocupar toda a largura e ficar no centro */
-  .slider-navigator > .FlipCard { 
+  .botoes-mobile {
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-around; 
+    align-items: center;
     width: 100%;
-    max-width: 300px;
-    order: 2; /* Coloca a carta na segunda linha */
-    margin: 20px 0; /* Espaço acima e abaixo da carta */
+    max-width: 300px; 
+    order: 2; 
   }
 
-  /* Faz os botões ficarem lado a lado na primeira linha */
+  .slider-navigator > .FlipCard { 
+      order: 1; 
+  }
+
   .btn-seta {
     width: 60px;
     height: 60px;
-    order: 1; /* Coloca os botões na primeira linha */
-    margin: 0 10px; /* Adiciona espaço entre eles, centralizado */
+    position: static;
+    margin: 0;
   }
 
-  /* Ajusta o posicionamento do botão de avançar para a direita */
-  .btn-avancar {
-    margin-left: auto; /* Empurra para a direita se precisar de espaço */
+  .btn-seta img {
+    width: 30px;
+    height: 30px;
   }
 }
 </style>
