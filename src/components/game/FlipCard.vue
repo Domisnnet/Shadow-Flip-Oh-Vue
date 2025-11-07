@@ -81,7 +81,7 @@ function handleClick() {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  transform: rotateY(180deg) scale(1.4);
+  transform: rotateY(180deg) scale(1.2);
 }
 
 .front-face {
