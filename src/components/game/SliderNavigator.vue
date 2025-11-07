@@ -10,7 +10,7 @@
         <img src="/images/seta.png" alt="seta avançar" />
       </button>
     </div>
-
+    
     <FlipCard 
       v-if="currentCard"
       :fundo="currentCard.fundo"
@@ -54,6 +54,7 @@ function previousCard() {
 </script>
 
 <style scoped>
+/* ESTILOS DESKTOP */
 .slider-navigator {
   display: flex;
   justify-content: center;
@@ -63,6 +64,7 @@ function previousCard() {
 }
 
 .botoes-mobile {
+  /* No desktop, o conteúdo é "espalhado" para que os botões pareçam filhos diretos */
   display: contents; 
 }
 
@@ -100,11 +102,13 @@ function previousCard() {
   transform: rotate(180deg);
 }
 
+/* ESTILOS MOBILE */
 @media (max-width: 768px) {
   .slider-navigator {
     flex-direction: column;
     align-items: center;
-    gap: 40px;
+    /* Espaçamento corrigido entre Carta e Botões */
+    gap: 40px; 
     width: 100%;
     max-width: 400px;
     margin: 0 auto;
@@ -112,22 +116,26 @@ function previousCard() {
   }
   
   .botoes-mobile {
+    /* Força o alinhamento horizontal dos botões */
     display: flex !important; 
     flex-direction: row !important; 
     justify-content: space-around; 
     align-items: center;
     width: 100%;
     max-width: 300px; 
-    order: 2;
+    /* Coloca o grupo de botões abaixo da carta */
+    order: 2; 
   }
 
   .slider-navigator > .FlipCard { 
-    order: 1; 
+      order: 1; 
   }
 
+  /* Neutralização do CSS Global (position: absolute) */
   .slider-navigator .btn-seta { 
     display: flex !important;
     position: static !important;
+    
     width: 60px;
     height: 60px;
     margin: 0; 
