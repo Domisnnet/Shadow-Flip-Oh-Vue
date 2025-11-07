@@ -54,7 +54,7 @@ function previousCard() {
 </script>
 
 <style scoped>
-/* ESTILOS DESKTOP */
+/* ESTILOS GERAIS */
 .slider-navigator {
   display: flex;
   justify-content: center;
@@ -63,9 +63,11 @@ function previousCard() {
   padding: 40px 20px;
 }
 
-.botoes-mobile {
-  /* No desktop, o conteúdo é "espalhado" para que os botões pareçam filhos diretos */
-  display: contents; 
+/* 🎯 CORREÇÃO CRÍTICA: Aplica display: contents APENAS NO DESKTOP */
+@media (min-width: 769px) {
+  .botoes-mobile {
+    display: contents; 
+  }
 }
 
 .btn-seta {
@@ -102,12 +104,11 @@ function previousCard() {
   transform: rotate(180deg);
 }
 
-/* ESTILOS MOBILE */
+/* ESTILOS MOBILE (max-width: 768px) */
 @media (max-width: 768px) {
   .slider-navigator {
     flex-direction: column;
     align-items: center;
-    /* Espaçamento corrigido entre Carta e Botões */
     gap: 40px; 
     width: 100%;
     max-width: 400px;
@@ -116,9 +117,9 @@ function previousCard() {
   }
   
   .botoes-mobile {
-    /* Força o alinhamento horizontal dos botões */
-    display: flex !important; 
-    flex-direction: row !important; 
+    /* Força display: flex no mobile (sem !important, pois display: contents foi isolado) */
+    display: flex; 
+    flex-direction: row; 
     justify-content: space-around; 
     align-items: center;
     width: 100%;
@@ -127,13 +128,13 @@ function previousCard() {
   }
 
   .slider-navigator > .FlipCard { 
-      order: 1; 
+    order: 1; 
   }
 
-  /* Neutralização do CSS Global (position: absolute) */
+  /* Neutralização do CSS Global (anula position: absolute) */
   .slider-navigator .btn-seta { 
     display: flex !important;
-    position: static !important;
+    position: static !important; 
     width: 60px;
     height: 60px;
     margin: 0; 
