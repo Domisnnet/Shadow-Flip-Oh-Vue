@@ -145,6 +145,7 @@ function handleClick() {
   text-align: left;
   line-height: 1.5;
   padding: 5px;
+  overflow: hidden;
 }
 
 .descricao {
@@ -152,6 +153,10 @@ function handleClick() {
   overflow-y: auto;
   padding: 10px;
   font-size: 13px;
+  border-bottom: 1px solid #000;
+  white-space: normal;        
+  text-overflow: unset;       
+  overflow-wrap: break-word;   
   border-bottom: 1px solid #000;
 }
 
