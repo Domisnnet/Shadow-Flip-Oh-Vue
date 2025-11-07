@@ -84,8 +84,9 @@ function handleClick() {
 .flipcard__front {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   padding: 12px;
-  gap: 5px;
+  gap: 10px;
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
@@ -114,7 +115,7 @@ function handleClick() {
 .flipcard__image {
   width: 100%;
   height: auto;
-  max-height: 40%;
+  max-height: 35%;
   object-fit: contain;
   border: 4px solid #a67c52;
   border-radius: 8px;
@@ -141,6 +142,7 @@ function handleClick() {
   overflow-y: auto;
   padding: 10px;
   font-size: 13px;
+  line-height: 1.4;
   border-bottom: 1px solid #000;
   white-space: normal;
   overflow-wrap: break-word;
