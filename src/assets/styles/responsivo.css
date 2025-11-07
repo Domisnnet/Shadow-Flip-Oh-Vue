@@ -32,14 +32,6 @@
     position: relative;
   }
   
-  .btn-seta {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 45px;
-    height: 45px;
-  }
-  
   #btn-avancar {
     right: 10px;
   }
