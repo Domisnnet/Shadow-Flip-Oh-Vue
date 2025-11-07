@@ -1,6 +1,6 @@
 <template>
   <div class="slider-navigator"> 
-
+    
     <FlipCard 
       v-if="currentCard"
       :fundo="currentCard.fundo"
@@ -54,16 +54,15 @@ function previousCard() {
 </script>
 
 <style scoped>
-/* Layout padrão para desktop e tablet */
+/* ESTILOS DESKTOP/PADRÃO */
 .slider-navigator {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 100px; /* Espaço entre Botão | Carta | Botão */
+  gap: 100px; 
   padding: 40px 20px;
 }
 
-/* 🎯 CORREÇÃO DESKTOP: Faz o div.botoes-mobile desaparecer */
 @media (min-width: 769px) {
   .botoes-mobile {
     display: contents; 
@@ -105,7 +104,7 @@ function previousCard() {
   transform: rotate(180deg);
 }
 
-/* 🎯 CORREÇÃO MOBILE: Layout vertical, botões lado a lado */
+/* MOBILE */
 @media (max-width: 768px) {
   .slider-navigator {
     flex-direction: column;
@@ -117,9 +116,8 @@ function previousCard() {
     padding: 20px 10px;
   }
   
-  /* Faz os botões ficarem lado a lado e define a ordem abaixo da carta */
   .botoes-mobile {
-    display: flex;
+    display: flex; 
     flex-direction: row; 
     justify-content: space-around; 
     align-items: center;
@@ -128,7 +126,6 @@ function previousCard() {
     order: 2; 
   }
 
-  /* Garante que a carta fique em cima */
   .slider-navigator > .FlipCard { 
       order: 1; 
   }
