@@ -37,8 +37,8 @@ onMounted(() => {
 .game-board-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 15px;
-  padding: 20px;
+  gap: 20px;
+  padding: 30px;
   background-color: rgba(0, 0, 0, 0.4);
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
@@ -51,7 +51,7 @@ onMounted(() => {
 @media (max-width: 768px) {
   .game-board-container {
     grid-template-columns: repeat(2, 1fr);
-    padding: 15px;
+    padding: 20px;
   }
 }
 
@@ -59,7 +59,7 @@ onMounted(() => {
 @media (max-width: 500px) {
   .game-board-container {
     grid-template-columns: 1fr;
-    padding: 10px;
+    padding: 15px;
   }
 }
 </style>
