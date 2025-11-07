@@ -33,28 +33,33 @@
   });
   </script>
   
-  <style scoped>
+<style scoped>
+.game-board-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 15px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.4); 
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+  margin: 20px auto; 
+  max-width: 1000px;
+  justify-content: center;
+}
+
+/* 📱 Ajustes para tablets */
+@media (max-width: 768px) {
   .game-board-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); 
-    gap: 15px; 
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.4); 
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
-    margin: 20px auto; 
-    max-width: 900px;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 15px;
   }
-  
-  @media (max-width: 768px) {
-    .game-board-container {
-      grid-template-columns: repeat(3, 1fr);
-    }
+}
+
+/* 📱 Ajustes para celulares */
+@media (max-width: 500px) {
+  .game-board-container {
+    grid-template-columns: 1fr;
+    padding: 10px;
   }
-  
-  @media (max-width: 500px) {
-    .game-board-container {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-  </style>  
+}
+</style>
