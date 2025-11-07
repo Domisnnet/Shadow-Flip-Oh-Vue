@@ -30,7 +30,6 @@
 <script setup>
 import { computed, onMounted } from 'vue'; 
 import FlipCard from '../game/FlipCard.vue';
-import SliderNavigator from '../game/SliderNavigator.vue'; 
 import { useGameStore } from '../stores/game.js';
 
 const gameStore = useGameStore();
@@ -60,11 +59,18 @@ function previousCard() {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 100px;
+  gap: 100px; /* Espaço entre Botão | Carta | Botão */
   padding: 40px 20px;
 }
 
-/* Botões de navegação */
+/* 🎯 CORREÇÃO DESKTOP: Faz o div.botoes-mobile desaparecer */
+@media (min-width: 769px) {
+  .botoes-mobile {
+    display: contents; 
+  }
+}
+
+/* Botões de navegação (Estilos gerais) */
 .btn-seta {
   width: 70px;
   height: 70px;
@@ -99,36 +105,44 @@ function previousCard() {
   transform: rotate(180deg);
 }
 
-/* Layout para mobile */
+/* 🎯 CORREÇÃO MOBILE: Layout vertical, botões lado a lado */
 @media (max-width: 768px) {
   .slider-navigator {
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 40px; 
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px 10px;
+  }
+  
+  /* Faz os botões ficarem lado a lado e define a ordem abaixo da carta */
+  .botoes-mobile {
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-around; 
+    align-items: center;
+    width: 100%;
+    max-width: 300px;
+    order: 2; 
+  }
+
+  /* Garante que a carta fique em cima */
+  .slider-navigator > .FlipCard { 
+      order: 1; 
   }
 
   .btn-seta {
     width: 60px;
     height: 60px;
-    position: static;
+    position: static !important; 
+    margin: 0; 
   }
 
   .btn-seta img {
     width: 30px;
     height: 30px;
-  }
-
-  .btn-voltar,
-  .btn-avancar {
-    margin: 0 10px;
-  }
-
-  .btn-voltar {
-    order: 1;
-  }
-
-  .btn-avancar {
-    order: 2;
   }
 }
 </style>
