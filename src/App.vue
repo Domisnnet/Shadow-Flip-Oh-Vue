@@ -1,15 +1,24 @@
 <template>
   <header>
-    <h1>{{ tituloDoApp }}</h1>
+    <h1>Shadow Flip Oh</h1>
   </header>
-  
   <router-view />
 </template>
 
 <script setup>
-// Nada mais é necessário aqui. O router faz o trabalho.
+// ... código JavaScript
 </script>
 
-<style>
-/* Você não precisa de estilos aqui se estiver usando um estilo.css global */
+<style scoped>
+/* ESTE CSS SÓ AFETA O TEMPLATE ACIMA (h1, header) */
+header {
+  padding-top: 40px;
+  padding-bottom: -50px;
+  text-align: center;
+}
+h1 {
+  color: #fff;
+  font-size: 2em;
+  margin: 0;
+}
 </style>
