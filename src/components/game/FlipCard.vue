@@ -44,11 +44,10 @@ function handleClick() {
 </script>
 
 <style scoped>
-/* === Estrutura === */
 .flipcard {
   width: 100%;
-  max-width: 300px;
-  height: 500px;
+  max-width: 320px;
+  aspect-ratio: 3 / 5;
   perspective: 1000px;
   cursor: pointer;
 }
@@ -74,7 +73,6 @@ function handleClick() {
   overflow: hidden;
 }
 
-/* === Verso === */
 .flipcard__back {
   background-image: url("/images/fundo-carta.jpg");
   background-size: contain;
@@ -83,7 +81,6 @@ function handleClick() {
   transform: rotateY(180deg) scale(1.4);
 }
 
-/* === Frente === */
 .flipcard__front {
   display: flex;
   flex-direction: column;
@@ -95,7 +92,6 @@ function handleClick() {
   overflow: hidden;
 }
 
-/* === Conteúdo === */
 .flipcard__title {
   font-size: 13px;
   padding: 5px;
@@ -118,7 +114,7 @@ function handleClick() {
 .flipcard__image {
   width: 100%;
   height: auto;
-  max-height: 200px;
+  max-height: 40%;
   object-fit: contain;
   border: 4px solid #a67c52;
   border-radius: 8px;
@@ -168,7 +164,7 @@ function handleClick() {
   border-radius: 10px;
 }
 
-/* === Fundos dinâmicos === */
+/* Fundos dinâmicos */
 .fundo-1 { background-image: url(/images/fundo-1.jpg); }
 .fundo-2 { background-image: url(/images/fundo-2.jpg); }
 .fundo-3 { background-image: url(/images/fundo-3.jpg); }
@@ -177,11 +173,10 @@ function handleClick() {
 .fundo-6 { background-image: url(/images/fundo-6.jpg); }
 .fundo-7 { background-image: url(/images/fundo-7.jpg); }
 
-/* === Responsividade === */
+/* Responsividade */
 @media (max-width: 768px) {
   .flipcard {
     max-width: 100%;
-    height: 500px;
   }
 
   .flipcard__image {
