@@ -118,7 +118,7 @@ function handleClick() {
 
 .card-image {
   width: 100%;
-  max-width: 260px;
+  max-width: 275px;
   align-self: center;
   border: 4px solid #a67c52;
   border-radius: 8px;
