@@ -95,7 +95,11 @@ O jogo ficará disponível em [http://localhost:5173](http://localhost:5173)
 O projeto está disponível para jogar online nos seguintes links:
 
 <p align="left">
-  <a href="https://shadow-flip-oh-86570817-f8cc4.web.app/" target="_blank" style="text-decoration: none;"><img src="https://raw.githubusercontent.com/Domisnnet/Shadow-Flip-Oh-Vue/main/public/images/firebase_badge.svg" alt="Deploy to Firebase Hosting" width="200" style="border: none;"></a><a href="https://domisnnet.github.io/Shadow-Flip-Oh-Vue/" target="_blank" style="text-decoration: none;"><img src="https://raw.githubusercontent.com/Domisnnet/Shadow-Flip-Oh-Vue/main/public/images/github_badge.svg" alt="Deploy to GitHub Pages" width="200" style="border: none;"></a>
+  <a href="https://shadow-flip-oh-86570817-f8cc4.web.app/" target="_blank" style="text-decoration: none;"><img src="https://raw.githubusercontent.com/Domisnnet/Shadow-Flip-Oh-Vue/main/public/images/firebase_badge.svg" alt="Deploy to Firebase Hosting" width="150" style="border: none;"></a>
+  
+  &nbsp;
+  
+  <a href="https://domisnnet.github.io/Shadow-Flip-Oh-Vue/" target="_blank" style="text-decoration: none;"><img src="https://raw.githubusercontent.com/Domisnnet/Shadow-Flip-Oh-Vue/main/public/images/github_badge.svg" alt="Deploy to GitHub Pages" width="130" style="border: none;"></a>
 </p>
 
 ---
