@@ -12,7 +12,8 @@ Este projeto é uma aplicação web interativa que funciona como um carrossel (o
 - **`App.vue`**: Componente raiz que usa `<router-view />` para renderizar a rota ativa.
 - **`components/`**: Diretório principal dos componentes.
   - **`router/index.js`**: Define a rota principal (`/`) que aponta para o `GameView`.
-  - **`view/GameView.vue`**: O coração da interface. Exibe a carta atual e os botões de navegação do carrossel.
+  - **`view/GameView.vue`**: O componente de vista principal. Ele orquestra o estado do jogo e a navegação.
+  - **`game/SliderNavigator.vue`**: **(Componente de Navegação/Layout)** Container que encapsula o `FlipCard` e os botões de navegação, sendo o responsável direto pela aplicação das regras de Flexbox e responsividade do carrossel.
   - **`game/FlipCard.vue`**: Componente reutilizável que representa uma única carta. Contém a lógica para a animação de virada horizontal.
   - **`stores/game.js`**: Store do Pinia que gerencia o estado do carrossel, incluindo a lista de cartas, o índice da carta atual e o estado de "virada" (flipped) de cada uma.
   - **`data/rawCardData.js`**: Arquivo de dados que contém as informações de cada carta (nome, imagem, atributos, etc.).
@@ -26,31 +27,34 @@ Este projeto é uma aplicação web interativa que funciona como um carrossel (o
   - **Verso da Carta**: Mostra uma imagem de fundo padrão (`fundo-carta.jpg`).
   - **Frente da Carta**: Exibe dinamicamente todos os detalhes da carta (nome, nível, imagem, descrição, etc.).
 - **Navegação**: Botões de seta estilizados com efeitos de `hover` para uma experiência de usuário rica.
-- **Responsividade**: O layout se ajusta a telas mobile, com botões de navegação reposicionados para fácil acesso.
+- **Responsividade (Corrigida)**: O layout do carrossel, gerenciado pelo `SliderNavigator` e estilizado via `GameView` (onde o CSS reside), foi refatorado:
+  - **Desktop/Tablet (`min-width: 769px`)**: O layout é horizontal, com a carta centralizada e os botões de navegação (`.btn-desktop`) visíveis nas laterais, separados por um `gap` de 100px. O agrupador mobile (`.botoes-mobile`) fica oculto.
+  - **Mobile (`max-width: 768px`)**: O layout é vertical (`flex-direction: column`), com a carta no topo (`order: 1`). Os botões de navegação de desktop são ocultos, e o agrupador de botões (`.botoes-mobile`) é exibido e posicionado abaixo da carta (`order: 2`), com os botões dispostos lado a lado.
 
 ## Plano de Refatoração (Executado)
 
-O objetivo era alinhar a lógica da aplicação com a interface de usuário, transformando-a em um carrossel de cartas funcional e, por fim, garantir que o estado de virada das cartas fosse persistente.
+O objetivo inicial era transformar o código em um carrossel funcional com estado de virada persistente. O passo subsequente foi a **otimização crítica do layout responsivo** para garantir a consistência da interface em todos os dispositivos.
 
 **Passos Executados:**
 
 1.  **Simplificação do `stores/game.js`**: A lógica inicial de "jogo da memória" foi completamente removida e substituída por uma lógica de carrossel simples.
 2.  **Ajuste da Interação em `GameView.vue`**: O evento de clique na carta foi simplificado para chamar a ação `flipCard()` sem argumentos.
 3.  **Correção da Animação em `FlipCard.vue`**: A animação de virar foi ajustada para ser uma rotação puramente horizontal (`rotateY(180deg)`).
-4.  **Implementação do Estado de Giro Persistente**:
-    - **Problema**: Ao navegar com as setas, a carta que estava virada era automaticamente desvirada.
-    - **Correção**: Removida a lógica das ações `nextCard` e `previousCard` que resetava o estado `isFlipped` da carta. Agora, o estado de virada de cada carta é independente e só é alterado por um clique direto do usuário.
+4.  **Implementação do Estado de Giro Persistente**: Removida a lógica das ações `nextCard` e `previousCard` que resetava o estado `isFlipped` da carta. Agora, o estado de virada de cada carta é independente e só é alterado por um clique direto do usuário.
+5.  **Otimização Final e Correção do Layout Responsivo (SliderNavigator/GameView)**:
+    - **Template Ajustado**: Para resolver o conflito de Flexbox entre desktop e mobile, o template foi ajustado para incluir botões separados (`.btn-desktop`) e um agrupador de botões (`.botoes-mobile`) dentro do contêiner de navegação.
+    - **CSS por Visibilidade**: Foram aplicadas regras CSS nos breakpoints `@media` para garantir que apenas o conjunto de botões apropriado seja visível e que o `flex-direction` e o `order` dos elementos estejam corretos em ambos os layouts (horizontal no desktop, vertical no mobile).
 
 **Resultado:**
 
-A aplicação agora funciona como um carrossel de cartas coeso, onde o estado de virada de cada carta é salvo durante a navegação, proporcionando uma experiência de usuário mais intuitiva e alinhada com o comportamento esperado de uma galeria de cartas.
+A aplicação funciona como um carrossel de cartas coeso, onde o estado de virada de cada carta é salvo durante a navegação. O layout do carrossel está **totalmente responsivo**, exibindo a navegação lateral no desktop/tablet e a navegação centralizada abaixo da carta no mobile, resolvendo todos os problemas de alinhamento e ordenação.
 
 ## Gerenciamento de Múltiplos Deploys
 
 O projeto está configurado para ser publicado em dois ambientes de hospedagem distintos: **GitHub Pages** e **Firebase Hosting**. Cada ambiente exige uma configuração de build específica no arquivo `vite.config.ts`, controlada pela propriedade `base`.
 
--   **GitHub Pages**: Como o site é servido a partir de um subdiretório (ex: `usuario.github.io/repositorio/`), a configuração `base` deve ser definida como o nome do repositório: `base: '/Shadow-Flip-Oh-Vue/'`.
--   **Firebase Hosting**: Como o site é servido a partir da raiz do domínio (ex: `projeto.web.app`), a configuração `base` deve ser comentada ou removida para usar o valor padrão (`'/'`).
+- **GitHub Pages**: Como o site é servido a partir de um subdiretório (ex: `usuario.github.io/repositorio/`), a configuração `base` deve ser definida como o nome do repositório: `base: '/Shadow-Flip-Oh-Vue/'`.
+- **Firebase Hosting**: Como o site é servido a partir da raiz do domínio (ex: `projeto.web.app`), a configuração `base` deve ser comentada ou removida para usar o valor padrão (`'/'`).
 
 **Importante**: Antes de gerar o build da aplicação (`npm run build`), é essencial verificar e ajustar a propriedade `base` no arquivo `vite.config.ts` de acordo com a plataforma de destino.
 
@@ -65,7 +69,7 @@ Para publicar a aplicação na web, foi implementado um fluxo de deploy contínu
     - Executa o build da aplicação (`npm run build`).
     - Navega para o diretório `dist`, inicializa um repositório Git local, e envia (`push`) o conteúdo para a branch `gh-pages` do repositório remoto.
 2.  **Configuração da Chave SSH**: Para permitir que o ambiente de desenvolvimento enviasse o código para o GitHub de forma segura e automatizada, uma chave SSH foi gerada e adicionada às configurações do repositório no GitHub.
-3.  **Ajuste da Configuração do Vite**: O arquivo `vite.config.ts` foi modificado para incluir a propriedade `base: '/Shadow-Flip-Oh-Vue/'`. Este passo foi crucial para garantir que todos os caminhos para os assets (JavaScript, CSS, imagens) fossem gerados corretamente, considerando que o site seria servido a partir de um subdireitório.
+3.  **Ajuste da Configuração do Vite**: O arquivo `vite.config.ts` foi modificado para incluir a propriedade `base: '/Shadow-Flip-Oh-Vue/'`. Este passo foi crucial para garantir que todos os caminhos para os assets (JavaScript, CSS, imagens) fossem gerados corretamente, considerando que o site seria servido a partir de um subdiretório.
 4.  **Configuração do GitHub Pages**: Nas configurações do repositório, o GitHub Pages foi configurado para usar a branch `gh-pages` como fonte e a pasta `/(root)` como o diretório de publicação.
 
 **Resultado Final:**
