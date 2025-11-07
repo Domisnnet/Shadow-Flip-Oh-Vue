@@ -1,33 +1,33 @@
 <template>
-    <div class="slider-navigator"> 
-      
-      <div class="botoes-mobile"> 
-        <button class="btn-seta btn-voltar" @click="previousCard">
-          <img src="/images/seta.png" alt="seta voltar" />
-        </button>
-  
-        <button class="btn-seta btn-avancar" @click="nextCard">
-          <img src="/images/seta.png" alt="seta avançar" />
-        </button>
-      </div>
-  
-      <FlipCard 
-        v-if="currentCard"
-        :fundo="currentCard.fundo"
-        :card-state="currentCard.cardState"
-        :content-url="currentCard.contentUrl" 
-        :alt="currentCard.alt"
-        :nivel="currentCard.nivel"
-        :descricao="currentCard.descricao"
-        :atk="currentCard.atk"
-        :def="currentCard.def"
-        @click-event="handleFlip" 
-      />
-  
+  <div class="slider-navigator"> 
+    
+    <div class="botoes-mobile"> 
+      <button class="btn-seta btn-voltar" @click="previousCard">
+        <img src="/images/seta.png" alt="seta voltar" />
+      </button>
+
+      <button class="btn-seta btn-avancar" @click="nextCard">
+        <img src="/images/seta.png" alt="seta avançar" />
+      </button>
     </div>
-  </template>
+
+    <FlipCard 
+      v-if="currentCard"
+      :fundo="currentCard.fundo"
+      :card-state="currentCard.cardState"
+      :content-url="currentCard.contentUrl" 
+      :alt="currentCard.alt"
+      :nivel="currentCard.nivel"
+      :descricao="currentCard.descricao"
+      :atk="currentCard.atk"
+      :def="currentCard.def"
+      @click-event="handleFlip" 
+    />
+
+  </div>
+</template>
   
-  <script setup>
+<script setup>
   import { computed, onMounted } from 'vue'; 
   import FlipCard from '../game/FlipCard.vue'; // Certifique-se de que o caminho está correto
   import { useGameStore } from '../stores/game.js'; // Certifique-se de que o caminho está correto
@@ -53,9 +53,9 @@
   function previousCard() {
     gameStore.previousCard();
   }
-  </script>
+</script>
   
-  <style scoped>
+<style scoped>
   /* Layout padrão para desktop e tablet */
   .slider-navigator {
     display: flex;
@@ -109,40 +109,42 @@
   
   /* Layout para mobile (max-width: 768px) */
   @media (max-width: 768px) {
-    .slider-navigator {
-      flex-direction: column; /* Empilha a carta e o grupo de botões */
-      align-items: center;
-      gap: 20px; /* Espaçamento menor no mobile */
-      padding: 20px 10px;
-    }
-    
-    /* NOVO: Configura o contêiner de botões para layout lado a lado */
-    .botoes-mobile {
-      display: flex; 
-      flex-direction: row; /* Coloca os botões um ao lado do outro */
-      justify-content: space-between;
-      width: 100%;
-      max-width: 300px; /* Alinha o grupo de botões com a largura aproximada da carta */
-      order: 2; /* Coloca o grupo de botões abaixo da carta */
-    }
-  
-    /* Ajusta o FlipCard para ser o primeiro item (o card) */
-    .slider-navigator > .FlipCard { 
-        order: 1; 
-    }
-  
-    /* Redimensiona e ajusta os botões no mobile */
-    .btn-seta {
-      width: 60px;
-      height: 60px;
-      position: static;
-      /* Remove a margem original para que 'space-between' funcione melhor */
-      margin: 0; 
-    }
-  
-    .btn-seta img {
-      width: 30px;
-      height: 30px;
-    }
+  .slider-navigator {
+    flex-direction: column; /* Continua empilhando o grupo de botões E a Carta */
+    align-items: center;
+    gap: 20px;
+    padding: 20px 10px;
   }
-  </style>
+  
+  /* ESTA É A CORREÇÃO: Força os botões ficarem lado a lado */
+  .botoes-mobile {
+    display: flex; /* CRUCIAL: Ativa o Flexbox para os filhos */
+    flex-direction: row; /* CRUCIAL: Alinha os itens em linha (lado a lado) */
+    justify-content: center; /* Centraliza os dois botões no espaço */
+    align-items: center;
+    width: 100%;
+    max-width: 300px; /* Limita a largura dos botões, alinhando com a carta */
+    order: 2; /* Coloca o grupo de botões abaixo da carta */
+    gap: 50px; /* Adiciona um espaço fixo entre os dois botões */
+  }
+
+  /* Ajusta o FlipCard para ser o primeiro item (o card) */
+  .slider-navigator > .FlipCard { 
+    order: 1; 
+  }
+
+  /* Redimensiona e ajusta os botões no mobile */
+  .btn-seta {
+    /* Reduz o tamanho e garante que não haja margens conflitantes */
+    width: 60px;
+    height: 60px;
+    position: static;
+    margin: 0; /* Remove qualquer margem externa desnecessária */
+  }
+
+  .btn-seta img {
+    width: 30px;
+    height: 30px;
+  }
+}
+</style>
