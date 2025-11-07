@@ -21,7 +21,7 @@
         <img :src="contentUrl" :alt="alt" class="card-image"/>
         
         <div class="informacoes">
-          <p class="descricao">{{ descricao }}</p>
+          <div class="descricao">{{ descricao }}</div>
           <div class="stats">
             <span>ATK/ {{ atk }}</span>
             <span>DEF/ {{ def }}</span>
