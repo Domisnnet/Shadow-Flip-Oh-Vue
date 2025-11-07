@@ -146,7 +146,6 @@ function handleClick() {
 .descricao {
   border-bottom: 1px solid #000;
   padding: 10px;
-  max-height: 95px;
   overflow-y: auto;
   font-size: 13px;
   flex-grow: 1;
