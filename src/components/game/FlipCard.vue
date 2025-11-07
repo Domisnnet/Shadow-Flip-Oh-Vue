@@ -55,7 +55,7 @@ function handleClick() {
 .card-container {
   width: 100%;
   max-width: 300px;
-  height: 500px;
+  aspect-ratio: 3 / 5;
   perspective: 1000px; 
   cursor: pointer;
 }
@@ -97,6 +97,7 @@ function handleClick() {
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
+  overflow: hidden;
 }
 
 .card-title {
@@ -124,8 +125,9 @@ function handleClick() {
 
 .card-image {
   width: 100%;
-  max-width: 260px;
-  align-self: center;
+  height: auto;
+  max-height: 40%;
+  object-fit: contain;
   border: 4px solid #a67c52;
   border-radius: 8px;
   display: block;
@@ -136,9 +138,7 @@ function handleClick() {
   display: flex;
   flex-direction: column;
   min-height: 0;
-  max-height: 160px;
   overflow: hidden;
-  margin-top: 5px;
   border-radius: 8px;
   color: #000;
   background: radial-gradient(circle, #f3e2c8, #e4cfa5, #c4a57a);
@@ -155,7 +155,6 @@ function handleClick() {
   font-size: 13px;
   border-bottom: 1px solid #000;
   white-space: normal;
-  text-overflow: unset;
   overflow-wrap: break-word;
 }
 
@@ -190,12 +189,7 @@ function handleClick() {
 @media (max-width: 768px) {
   .card-container {
     max-width: 100%;
-    height: 500px;
-  }
-
-  .card-image {
-    max-width: 100%;
-    height: auto;
+    aspect-ratio: 3 / 5;
   }
 
   .descricao {
