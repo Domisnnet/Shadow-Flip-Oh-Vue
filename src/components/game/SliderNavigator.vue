@@ -104,7 +104,7 @@ function previousCard() {
   .slider-navigator {
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 100px;
     width: 100%;
     max-width: 400px;
     margin: 0 auto;
@@ -122,13 +122,13 @@ function previousCard() {
   }
 
   .slider-navigator > .FlipCard { 
-      order: 1; 
+    order: 1; 
+    margin-bottom: 100px;
   }
 
   .slider-navigator .btn-seta { 
     display: flex !important;
     position: static !important;
-    
     width: 60px;
     height: 60px;
     margin: 0; 
