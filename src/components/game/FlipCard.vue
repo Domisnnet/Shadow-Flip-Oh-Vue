@@ -7,10 +7,10 @@
       class="card-inner" 
       :class="{ 'flipped': cardState === 'flipped' }"
     >
-      <!-- Verso do Card (Padrão) -->
+      <!-- Verso do Card -->
       <div class="card-face back-face"></div>
       
-      <!-- Frente do Card (Conteúdo) -->
+      <!-- Frente do Card -->
       <div class="card-face front-face" :class="fundo">
         <h2 class="card-title">{{ alt }}</h2>
         
@@ -145,7 +145,6 @@ function handleClick() {
   text-align: left;
   line-height: 1.5;
   padding: 5px;
-  overflow: hidden;
 }
 
 .descricao {
@@ -154,10 +153,9 @@ function handleClick() {
   padding: 10px;
   font-size: 13px;
   border-bottom: 1px solid #000;
-  white-space: normal;        
-  text-overflow: unset;       
-  overflow-wrap: break-word;   
-  border-bottom: 1px solid #000;
+  white-space: normal;
+  text-overflow: unset;
+  overflow-wrap: break-word;
 }
 
 .stats {
@@ -178,6 +176,7 @@ function handleClick() {
   border-radius: 10px;
 }
 
+/* Fundos */
 .fundo-1 { background-image: url(/images/fundo-1.jpg); }
 .fundo-2 { background-image: url(/images/fundo-2.jpg); }
 .fundo-3 { background-image: url(/images/fundo-3.jpg); }
@@ -185,4 +184,40 @@ function handleClick() {
 .fundo-5 { background-image: url(/images/fundo-5.jpg); }
 .fundo-6 { background-image: url(/images/fundo-6.jpg); }
 .fundo-7 { background-image: url(/images/fundo-7.jpg); }
+
+/* 📱 Media Queries para responsividade */
+@media (max-width: 768px) {
+  .card-container {
+    width: 100%;
+    height: auto;
+  }
+
+  .card-image {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .informacoes {
+    max-height: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-container {
+    width: 100%;
+    height: auto;
+  }
+
+  .card-title {
+    font-size: 12px;
+  }
+
+  .descricao {
+    font-size: 12px;
+  }
+
+  .stats {
+    font-size: 12px;
+  }
+}
 </style>
