@@ -27,150 +27,152 @@
 </template>
 
 <script setup>
-  defineProps({
-    fundo: String,
-    cardState: String,
-    contentUrl: String,
-    alt: String,
-    nivel: Number,
-    descricao: String,
-    atk: Number,
-    def: Number
-  });
+import { defineProps, defineEmits } from 'vue';
 
-  const emit = defineEmits(['click-event']);
+defineProps({
+  fundo: String,
+  cardState: String,
+  contentUrl: String,
+  alt: String,
+  nivel: Number,
+  descricao: String,
+  atk: Number,
+  def: Number
+});
 
-  function handleClick() {
-    emit('click-event');
-  }
+const emit = defineEmits(['click-event']);
+
+function handleClick() {
+  emit('click-event');
+}
 </script>
 
 <style scoped>
-  .card-container {
-    width: 300px;
-    height: 500px;
-    perspective: 1000px;
-    cursor: pointer;
-  }
+.card-container {
+  width: 300px;
+  height: 500px;
+  perspective: 1000px;
+  cursor: pointer;
+}
 
-  .card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
-  }
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
 
-  .card-inner.flipped {
-    transform: rotateY(180deg);
-  }
+.card-inner.flipped {
+  transform: rotateY(180deg);
+}
 
-  .card-face {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    border-radius: 10px;
-    overflow: hidden;
-  }
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  overflow: hidden;
+}
 
-  .back-face {
-    background-image: url("/images/fundo-carta.jpg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    transform: rotateY(180deg) scale(1.4);
-  }
+.back-face {
+  background-image: url("/images/fundo-carta.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: rotateY(180deg) scale(1.4);
+}
 
-  .front-face {
-    display: flex;
-    flex-direction: column;
-    padding: 12px;
-    gap: 5px;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
+.front-face {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  gap: 5px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
-  .card-title {
-    font-size: 13px;
-    padding: 5px;
-    text-transform: uppercase;
-    background: radial-gradient(circle, #f3e2c8, #e4cfa5, #c4a57a);
-    border: 1px solid #a67c52;
-    border-radius: 8px;
-    color: #000;
-    margin: 0 0 5px 0;
-    text-align: center;
-  }
+.card-title {
+  font-size: 13px;
+  padding: 5px;
+  text-transform: uppercase;
+  background: radial-gradient(circle, #f3e2c8, #e4cfa5, #c4a57a);
+  border: 1px solid #a67c52;
+  border-radius: 8px;
+  color: #000;
+  margin: 0 0 5px 0;
+  text-align: center;
+}
 
-  .card-level {
-    display: flex;
-    justify-content: flex-end;
-    gap: 2px;
-    margin-right: 10px;
-  }
+.card-level {
+  display: flex;
+  justify-content: flex-end;
+  gap: 2px;
+  margin-right: 10px;
+}
 
-  .estrela {
-    font-size: 16px;
-  }
+.estrela {
+  font-size: 16px;
+}
 
-  .card-image {
-    width: 100%;
-    max-width: 260px;
-    align-self: center;
-    border: 4px solid #a67c52;
-    border-radius: 8px;
-    display: block;
-  }
+.card-image {
+  width: 100%;
+  max-width: 260px;
+  align-self: center;
+  border: 4px solid #a67c52;
+  border-radius: 8px;
+  display: block;
+}
 
-  .informacoes {
-    margin-top: 5px;
-    border-radius: 8px;
-    color: #000;
-    background: radial-gradient(circle, #f3e2c8, #e4cfa5, #c4a57a);
-    border: 2px solid #a67c52;
-    text-align: left;
-    line-height: 1.5;
-    padding: 5px;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    min-height: 0;
-  }
+.informacoes {
+  margin-top: 5px;
+  border-radius: 8px;
+  color: #000;
+  background: radial-gradient(circle, #f3e2c8, #e4cfa5, #c4a57a);
+  border: 2px solid #a67c52;
+  text-align: left;
+  line-height: 1.5;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  min-height: 0;
+}
 
-  .descricao {
-    border-bottom: 1px solid #000;
-    padding: 10px;
-    overflow-y: auto;
-    font-size: 13px;
-    flex-grow: 1;
-  }
+.descricao {
+  border-bottom: 1px solid #000;
+  padding: 10px;
+  overflow-y: auto;
+  font-size: 13px;
+  flex-grow: 1;
+}
 
-  .stats {
-    display: flex;
-    justify-content: flex-end;
-    gap: 15px;
-    padding: 5px 10px;
-    font-size: 13px;
-    font-weight: bold;
-  }
+.stats {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  padding: 5px 10px;
+  font-size: 13px;
+  font-weight: bold;
+}
 
-  /* Estilos para Scrollbar no Chrome/Edge/Safari */
-  .descricao::-webkit-scrollbar {
-    width: 8px;
-  }
+/* Estilos para Scrollbar no Chrome/Edge/Safari */
+.descricao::-webkit-scrollbar {
+  width: 8px;
+}
 
-  .descricao::-webkit-scrollbar-thumb {
-    background: #c08057;
-    border-radius: 10px;
-  }
+.descricao::-webkit-scrollbar-thumb {
+  background: #c08057;
+  border-radius: 10px;
+}
 
-  /* Classes de Fundo Temático */
-  .fundo-1 {background-image: url(/images/fundo-1.jpg);}
-  .fundo-2 {background-image: url(/images/fundo-2.jpg);}
-  .fundo-3 {background-image: url(/images/fundo-3.jpg);}
-  .fundo-4 {background-image: url(/images/fundo-4.jpg);}
-  .fundo-5 {background-image: url(/images/fundo-5.jpg);}
-  .fundo-6 {background-image: url(/images/fundo-6.jpg);}
-  .fundo-7 {background-image: url(/images/fundo-7.jpg);}
+/* Classes de Fundo Temático */
+.fundo-1 { background-image: url(/images/fundo-1.jpg); }
+.fundo-2 { background-image: url(/images/fundo-2.jpg); }
+.fundo-3 { background-image: url(/images/fundo-3.jpg); }
+.fundo-4 { background-image: url(/images/fundo-4.jpg); }
+.fundo-5 { background-image: url(/images/fundo-5.jpg); }
+.fundo-6 { background-image: url(/images/fundo-6.jpg); }
+.fundo-7 { background-image: url(/images/fundo-7.jpg); }
 </style>
