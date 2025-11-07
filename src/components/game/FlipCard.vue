@@ -175,4 +175,13 @@ function handleClick() {
 .fundo-5 { background-image: url(/images/fundo-5.jpg); }
 .fundo-6 { background-image: url(/images/fundo-6.jpg); }
 .fundo-7 { background-image: url(/images/fundo-7.jpg); }
+
+@media (max-width: 768px) {
+  .card-container {
+    width: 90vw; 
+    max-width: 300px; 
+    height: auto; 
+    aspect-ratio: 3/5; 
+  }
+}
 </style>
