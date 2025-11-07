@@ -1,6 +1,10 @@
 <template>
   <div class="slider-navigator"> 
     
+    <button class="btn-seta btn-voltar btn-desktop" @click="previousCard">
+      <img src="/images/seta.png" alt="seta voltar" />
+    </button>
+    
     <FlipCard 
       v-if="currentCard"
       :fundo="currentCard.fundo"
@@ -13,6 +17,10 @@
       :def="currentCard.def"
       @click-event="handleFlip" 
     />
+
+    <button class="btn-seta btn-avancar btn-desktop" @click="nextCard">
+      <img src="/images/seta.png" alt="seta avançar" />
+    </button>
 
     <div class="botoes-mobile">
       <button class="btn-seta btn-voltar" @click="previousCard">
@@ -59,15 +67,19 @@ function previousCard() {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 100px; 
+  gap: 100px; /* Espaço entre Botão | Carta | Botão */
   padding: 40px 20px;
 }
 
-@media (min-width: 769px) {
-  .botoes-mobile {
-    display: contents; 
-  }
+/* Oculta o agrupador mobile no desktop */
+.botoes-mobile {
+    display: none;
 }
+/* Garante que os botões soltos (desktop) sejam visíveis */
+.btn-desktop {
+    display: flex !important;
+}
+
 
 /* Botões de navegação (Estilos gerais) */
 .btn-seta {
@@ -116,6 +128,12 @@ function previousCard() {
     padding: 20px 10px;
   }
   
+  /* Oculta os botões soltos (desktop) no mobile */
+  .btn-desktop {
+      display: none !important;
+  }
+  
+  /* Mostra o agrupador mobile e o alinha */
   .botoes-mobile {
     display: flex; 
     flex-direction: row; 
@@ -123,9 +141,10 @@ function previousCard() {
     align-items: center;
     width: 100%;
     max-width: 300px;
-    order: 2; 
+    order: 2; /* Fica abaixo da carta */
   }
 
+  /* Garante que a carta fique em cima */
   .slider-navigator > .FlipCard { 
       order: 1; 
   }
