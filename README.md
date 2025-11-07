@@ -99,8 +99,6 @@ O projeto está disponível para jogar online nos seguintes links:
     <img src="https://raw.githubusercontent.com/Domisnnet/Shadow-Flip-Oh-Vue/main/public/images/firebase_badge.svg" alt="Deploy to Firebase Hosting" width="130" style="border: none;">
   </a>
   
-  &nbsp;
-  
   <a href="https://domisnnet.github.io/Shadow-Flip-Oh-Vue/" target="_blank" style="text-decoration: none;">
     <img src="https://raw.githubusercontent.com/Domisnnet/Shadow-Flip-Oh-Vue/main/public/images/github_badge.svg" alt="Deploy to GitHub Pages" width="100" style="border: none;">
   </a>
