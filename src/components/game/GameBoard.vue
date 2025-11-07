@@ -22,7 +22,7 @@
 <script setup>
 import { onMounted } from 'vue';
 import { useGameStore } from '../../stores/game';
-import FlipCard from './FlipCard.vue';
+import FlipCard from './FlipCard.vue'; 
 
 const gameStore = useGameStore();
 
@@ -37,29 +37,13 @@ onMounted(() => {
 .game-board-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-  padding: 30px;
-  background-color: rgba(0, 0, 0, 0.4);
+  gap: 15px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.4); 
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
-  margin: 20px auto;
+  margin: 20px auto; 
   max-width: 1000px;
   justify-content: center;
-}
-
-/* Tablets */
-@media (max-width: 768px) {
-  .game-board-container {
-    grid-template-columns: repeat(2, 1fr);
-    padding: 20px;
-  }
-}
-
-/* Celulares */
-@media (max-width: 500px) {
-  .game-board-container {
-    grid-template-columns: 1fr;
-    padding: 15px;
-  }
 }
 </style>
