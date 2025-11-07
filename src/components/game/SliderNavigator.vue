@@ -134,9 +134,9 @@ function previousCard() {
   .btn-seta {
     width: 60px;
     height: 60px;
-    /* ESSENCIAL: Anula o 'position: absolute;' do arquivo responsivo.css */
     position: static; 
     margin: 0; 
+    display: flex !important;
   }
   
   /* Caso o .btn-seta não seja específico o suficiente, use este seletor */
