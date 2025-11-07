@@ -104,7 +104,7 @@ function previousCard() {
   .slider-navigator {
     flex-direction: column;
     align-items: center;
-    gap: 100px;
+    gap: 40px;
     width: 100%;
     max-width: 400px;
     margin: 0 auto;
@@ -112,18 +112,17 @@ function previousCard() {
   }
   
   .botoes-mobile {
-    display: flex; 
+    display: flex !important; 
     flex-direction: row; 
-    justify-content: space-around; 
+    justify-content: space-between; 
     align-items: center;
     width: 100%;
     max-width: 300px; 
-    order: 2; 
+    order: 2;
   }
 
   .slider-navigator > .FlipCard { 
     order: 1; 
-    margin-bottom: 100px;
   }
 
   .slider-navigator .btn-seta { 
