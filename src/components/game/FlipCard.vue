@@ -95,6 +95,7 @@ function handleClick() {
   gap: 5px;
   background-repeat: no-repeat;
   background-size: cover;
+  height: 100%;
 }
 
 .card-title {
@@ -130,6 +131,12 @@ function handleClick() {
 }
 
 .informacoes {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  max-height: 160px;
+  overflow: hidden;
   margin-top: 5px;
   border-radius: 8px;
   color: #000;
@@ -138,19 +145,14 @@ function handleClick() {
   text-align: left;
   line-height: 1.5;
   padding: 5px;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  min-height: 0;
 }
 
 .descricao {
-  max-height: 120px;
-  border-bottom: 1px solid #000;
-  padding: 10px;
-  overflow-y: scroll;
-  font-size: 13px;
   flex-grow: 1;
+  overflow-y: auto;
+  padding: 10px;
+  font-size: 13px;
+  border-bottom: 1px solid #000;
 }
 
 .stats {
