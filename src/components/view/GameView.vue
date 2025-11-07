@@ -1,8 +1,5 @@
 <template>
   <div class="slider-navigator"> 
-    <button class="btn-seta btn-voltar" @click="previousCard">
-      <img src="/images/seta.png" alt="seta voltar" />
-    </button>
 
     <FlipCard 
       v-if="currentCard"
@@ -17,15 +14,23 @@
       @click-event="handleFlip" 
     />
 
-    <button class="btn-seta btn-avancar" @click="nextCard">
-      <img src="/images/seta.png" alt="seta avançar" />
-    </button>
+    <div class="botoes-mobile">
+      <button class="btn-seta btn-voltar" @click="previousCard">
+        <img src="/images/seta.png" alt="seta voltar" />
+      </button>
+
+      <button class="btn-seta btn-avancar" @click="nextCard">
+        <img src="/images/seta.png" alt="seta avançar" />
+      </button>
+    </div>
+    
   </div>
 </template>
 
 <script setup>
 import { computed, onMounted } from 'vue'; 
-import FlipCard from '../game/FlipCard.vue'; 
+import FlipCard from '../game/FlipCard.vue';
+import SliderNavigator from '../game/SliderNavigator.vue'; 
 import { useGameStore } from '../stores/game.js';
 
 const gameStore = useGameStore();
