@@ -1,4 +1,8 @@
 <template>
+  <header>
+    <h1>{{ tituloDoApp }}</h1>
+  </header>
+  
   <router-view />
 </template>
 
