@@ -145,9 +145,10 @@ function handleClick() {
 }
 
 .descricao {
+  max-height: 120px;
   border-bottom: 1px solid #000;
   padding: 10px;
-  overflow-y: auto;
+  overflow-y: scroll;
   font-size: 13px;
   flex-grow: 1;
 }
