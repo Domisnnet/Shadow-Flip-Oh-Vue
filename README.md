@@ -95,12 +95,8 @@ O jogo ficará disponível em [http://localhost:5173](http://localhost:5173)
 O projeto está disponível para jogar online nos seguintes links:
 
 <p align="left">
-  <a href="https://shadow-flip-oh-86570817-f8cc4.web.app/" target="_blank">
-    <img src="https://raw.githubusercontent.com/Domisnnet/Shadow-Flip-Oh-Vue/main/public/images/firebase_badge.svg" alt="Deploy to Firebase Hosting" width="200">
-  </a>
-  <a href="https://domisnnet.github.io/Shadow-Flip-Oh-Vue/" target="_blank">
-    <img src="https://raw.githubusercontent.com/Domisnnet/Shadow-Flip-Oh-Vue/main/public/images/github_badge.svg" alt="Deploy to GitHub Pages" width="200">
-  </a>
+[![Deploy to Firebase Hosting](https://raw.githubusercontent.com/Domisnnet/Shadow-Flip-Oh-Vue/main/public/images/firebase_badge.svg)](https://shadow-flip-oh-86570817-f8cc4.web.app/)
+[![Deploy to GitHub Pages](https://raw.githubusercontent.com/Domisnnet/Shadow-Flip-Oh-Vue/main/public/images/github_badge.svg)](https://domisnnet.github.io/Shadow-Flip-Oh-Vue/)
 </p>
 
 ---
